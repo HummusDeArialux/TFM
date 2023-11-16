@@ -34,6 +34,10 @@ Imagenes_256 can be obtain by resizing images to 256x256
 Imagenes_256_reduced can be obtain by executing the code in reducing_dataset.py
 Imagenes_test can be obtain by executing the code in create_test_images.py
 
+## Models
+
+Models can't be uploaded due to size, but can be obtain by executing the following code: CNN.py, DenseNet.py and ResNet.py.
+
 ## Acknowledgments
 
 Special thanks to:
