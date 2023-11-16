@@ -15,7 +15,6 @@ This repository contains the code for my Master's Thesis (TFM) focused on machin
 ## Repository Structure
 
 - **`/code`:** Contains all the code files, including Python scripts.
-- **`/models`:** Saved pre-trained models, as well as model architecture details.
 - **`/docs`:** Detailed project documentation, including research papers, thesis, or any relevant reports.
 - **`/results`:** Stores model evaluation metrics, visualizations, and any other relevant output.
 
