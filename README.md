@@ -15,7 +15,6 @@ This repository contains the code for my Master's Thesis (TFM) focused on machin
 ## Repository Structure
 
 - **`/code`:** Contains all the code files, including Python scripts.
-- **`/data`:** BCN20000, avaiable at: https://api.isic-archive.com/collections/249/
 - **`/models`:** Saved pre-trained models, as well as model architecture details.
 - **`/docs`:** Detailed project documentation, including research papers, thesis, or any relevant reports.
 - **`/results`:** Stores model evaluation metrics, visualizations, and any other relevant output.
@@ -27,6 +26,13 @@ ADD WEB LINK WHEN COMPLETED
 ## Documentation
 
 For detailed information about the project, including methodologies, findings, and the web app architecture, please refer to the `/docs` directory.
+
+## Data
+
+BCN20000, avaiable at: https://api.isic-archive.com/collections/249/
+Imagenes_256 can be obtain by resizing images to 256x256
+Imagenes_256_reduced can be obtain by executing the code in reducing_dataset.py
+Imagenes_test can be obtain by executing the code in create_test_images.py
 
 ## Acknowledgments
 
