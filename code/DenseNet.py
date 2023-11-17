@@ -129,7 +129,7 @@ history = model.fit(
 )
 
 # Save the model to a specific path
-model.save('E:/TFM/Results with code/Trained_models/DenseNet_DEF_best.h5')
+model.save('E:/TFM/Results with code/Trained_models/DenseNet121.h5')
 
 # EVALUATE MODEL
 # Plot training and validation loss
