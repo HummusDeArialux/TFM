@@ -122,7 +122,7 @@ history = model.fit(
 )
 
 # Save the model to a specific path
-model.save('E:/TFM/Results with code/Trained_models/ResNet50_model.h5')
+model.save('E:/TFM/Results with code/Trained_models/ResNet50.h5')
 
 # EVALUATE MODEL
 # Plot training and validation loss
