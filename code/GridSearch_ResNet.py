@@ -129,7 +129,7 @@ def train_model(X_train, y_train, X_val, y_val, X_test, y_test, learning_rate, d
        X_train, # Training images
        y_train, # One-hot encoded training labels
        validation_data=(X_val, y_val), # Validation data with one-hot encoded labels
-       epochs=num_epochs, # Number of training epochs
+       epochs=epochs, # Number of training epochs
        batch_size=32, # Batch size
        callbacks=[lr_scheduler] # Add the learning rate scheduler
    )
