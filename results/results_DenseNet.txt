@@ -1,0 +1,31 @@
+Test accuracy: 0.87
+Precision: 0.87
+Sensitivity (Recall): 0.87
+F1-Score: 0.87
+Cohen's Kappa: 0.80
+Classification Report:
+                      precision    recall  f1-score   support
+
+basal cell carcinoma       0.89      0.90      0.90       267
+            melanoma       0.87      0.86      0.86       293
+               nevus       0.84      0.85      0.84       292
+
+            accuracy                           0.87       852
+           macro avg       0.87      0.87      0.87       852
+        weighted avg       0.87      0.87      0.87       852
+
+Confusion Matrix:
+[[241  12  14]
+ [  9 251  33]
+ [ 20  25 247]]
+
+__________________________________________________________________
+
+Freezing rate: conv1_block
+Accuracy: 0.6435643434524536
+Freezing rate: conv3_block
+Accuracy: 0.6732673048973083
+Freezing rate: conv4_block
+Accuracy: 0.5346534848213196
+Freezing rate: conv5_block
+Accuracy: 0.7326732873916626

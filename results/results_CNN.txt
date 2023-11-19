@@ -1,0 +1,22 @@
+Test accuracy: 0.7253521084785461
+Test accuracy: 0.73
+Precision: 0.73
+Sensitivity (Recall): 0.73
+F1-Score: 0.72
+Cohen's Kappa: 0.59
+Matthews Correlation Coefficient (MCC): 0.59
+Classification Report:
+                      precision    recall  f1-score   support
+
+basal cell carcinoma       0.72      0.86      0.78       267
+            melanoma       0.76      0.60      0.67       293
+               nevus       0.71      0.73      0.72       292
+
+            accuracy                           0.73       852
+           macro avg       0.73      0.73      0.72       852
+        weighted avg       0.73      0.73      0.72       852
+
+Confusion Matrix:
+[[230  17  20]
+ [ 51 176  66]
+ [ 40  40 212]]
