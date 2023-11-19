@@ -1,0 +1,8 @@
+Best learning rate: 0.001
+Best dropout rate: 0.15
+Best number of epochs: 25
+Best validation accuracy combination: 0.6600000262260437
+Best learning rate test: 0.001
+Best dropout rate test: 0.15
+Best number of epochs test: 30
+Best test accuracy test: 0.6633663177490234

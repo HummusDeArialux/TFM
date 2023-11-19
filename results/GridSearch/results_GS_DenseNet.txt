@@ -1,0 +1,185 @@
+Best learning rate: 0.0001
+Best dropout rate: 0.1
+Best number of epochs: 15
+Best validation accuracy combination: 0.7799999713897705
+Best learning rate test: 0.001
+Best dropout rate test: 0.15
+Best number of epochs: 10
+Best test accuracy test: 0.7128713130950928
+
+________________________________
+
+import os
+import cv2
+import pandas as pd
+
+print('empezamooooos')
+
+# Mount Google Drive
+from google.colab import drive
+drive.mount('/content/drive')
+
+# Define file paths in your Google Drive
+metadata_file_path = '/content/drive/My Drive/Colab_Notebooks/test_metadata.csv'
+image_directory = '/content/drive/My Drive/Colab_Notebooks/Imagenes_test'
+
+# Load the metadata file
+metadata = pd.read_csv(metadata_file_path)
+
+# Delete non-informative columns
+col_drop = ['attribution', 'copyright_license', 'diagnosis_confirm_type', 'image_type', 'lesion_id']
+data = metadata.drop(columns = col_drop) # Eliminación de las columnas
+
+# Define a list to store image information
+image_info = []
+
+# Iterate through the metadata and gather image information
+for index, row in metadata.iterrows():
+    # Form the image file name using the isic_id
+    image_filename = row['isic_id'] + '.jpg'
+    image_path = os.path.join(image_directory, image_filename)
+    label = row['diagnosis']
+    age = row['age_approx']
+    sex = row['sex']
+    anatomical_site = row['anatom_site_general']
+
+    # Read and preprocess the image
+    image = cv2.imread(image_path)
+    image = image / 255.0  # Normalize the pixel values to the range [0, 1]
+
+    # Store the image and label information
+    image_info.append((image, label, age, sex, anatomical_site))
+
+print('cargados datos')
+
+from sklearn.model_selection import train_test_split
+
+# Extract images and labels from image_info
+images = [item[0] for item in image_info]
+labels = [item[1] for item in image_info]
+
+ # Unique number of diagnosis
+from collections import Counter
+num_classes = len(Counter(labels))
+
+from sklearn.preprocessing import LabelEncoder
+
+label_encoder = LabelEncoder()
+y_encoded = label_encoder.fit_transform(labels)
+
+import numpy as np
+
+# Convert image data to NumPy arrays and normalize
+images = np.array(images)  # X_train should be a list of image arrays
+
+from tensorflow.keras.utils import to_categorical
+
+y_one_hot = to_categorical(y_encoded, num_classes=num_classes)
+
+# Split the data into training, validation, and test sets
+X_train, X_temp, y_train, y_temp = train_test_split(images, y_one_hot, test_size=0.2, random_state=2023)
+X_val, X_test, y_val, y_test = train_test_split(X_temp, y_temp, test_size=0.5, random_state=2023)
+
+print('spliteed')
+
+## CLEAN RAM
+import gc
+
+del images
+del image
+del labels
+del data
+del image_info
+del metadata
+del X_temp
+del y_temp
+del y_one_hot
+gc.collect()
+
+print("Garbage collected")
+
+from tensorflow.keras import layers, models
+from tensorflow.keras.callbacks import EarlyStopping
+from sklearn.model_selection import train_test_split
+from tensorflow.keras.applications import DenseNet121
+from tensorflow.keras.layers import GlobalAveragePooling2D, Dense, Dropout, BatchNormalization
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.callbacks import ReduceLROnPlateau
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Define your hyperparameters
+learning_rates = [0.1, 0.01, 0.001, 0.0001]
+dropout_rates = [0.10, 0.15, 0.25, 0.35]
+num_epochs = [10, 15]
+
+results = {}  # Dictionary to store results for different hyperparameters on val accuracy
+results2 = {}  # Dictionary to store results for different hyperparameters on test accuracy
+
+for lnrt in learning_rates:
+    for dropout_rate in dropout_rates:
+        for epoch in num_epochs:
+            # Create the base model
+            base_model = DenseNet121(weights='imagenet', include_top=False)
+
+            # Determine which layers to freeze
+            # You can freeze all layers up to a specific block
+            # For example, to freeze all layers up to block4:
+            for layer in base_model.layers:
+                if 'conv4_block' in layer.name:
+                    break
+                layer.trainable = False
+
+            # Add custom layers on top of the pre-trained model
+            x = base_model.output
+            x = GlobalAveragePooling2D()(x)
+            x = BatchNormalization()(x)
+            x = Dense(256, activation='relu')(x)
+            x = Dropout(dropout_rate)(x)
+            predictions = Dense(num_classes, activation='softmax')(x)  # num_classes is the number of skin alteration classes
+
+            model = Model(inputs=base_model.input, outputs=predictions)
+
+            # Compile the model
+            model.compile(optimizer=Adam(learning_rate=lnrt), loss='categorical_crossentropy', metrics=['accuracy'])
+
+            # Define a learning rate scheduler
+            lr_scheduler = ReduceLROnPlateau(monitor='val_loss', factor=0.5, patience=3, min_lr=1e-6)
+
+            # When fitting the model, include the callbacks
+            history = model.fit(
+                X_train,
+                y_train,
+                validation_data=(X_val, y_val),
+                epochs=epoch,
+                batch_size=128,
+            )
+
+            # Evaluate the model on the test set
+            test_loss, test_accuracy = model.evaluate(X_test, y_test)
+
+            # Store the results for the current hyperparameters
+            results[(lnrt, dropout_rate, epoch)] = history.history['val_accuracy'][-1]
+
+            # Store the test accuracy for the current hyperparameters
+            results2[(lnrt, dropout_rate, epoch)] = test_accuracy
+
+# Find the best hyperparameters
+best_hyperparameters = max(results, key=results.get)
+best_lr, best_dropout_rate, best_epoch = best_hyperparameters
+best_accuracy = results[best_hyperparameters]
+print(f"Best learning rate: {best_lr}")
+print(f"Best dropout rate: {best_dropout_rate}")
+print(f"Best number of epochs: {best_epoch}")
+print(f"Best validation accuracy combination: {best_accuracy}")
+
+# Find the best hyperparameters based on test accuracy
+best_hyperparameters_test = max(results2, key=results2.get)
+best_lr_test, best_dropout_rate_test, best_epoch_test = best_hyperparameters_test
+best_test_accuracy = results2[best_hyperparameters_test]
+print(f"Best learning rate test: {best_lr_test}")
+print(f"Best dropout rate test: {best_dropout_rate_test}")
+print(f"Best number of epochs: {best_epoch_test}")
+print(f"Best test accuracy test: {best_test_accuracy}")

@@ -1,0 +1,39 @@
+10
+Best learning rate: 0.1
+Best dropout rate: 0.25
+Best number of epochs: 10
+Best validation accuracy combination: 0.3400000035762787
+TEST
+Best learning rate test: 0.1
+Best dropout rate test: 0.1
+Best number of epochs: 10
+Best test accuracy test: 0.3564356565475464
+20
+Best learning rate: 0.1
+Best dropout rate: 0.1
+Best number of epochs: 20
+Best validation accuracy combination: 0.3400000035762787
+TEST
+Best learning rate test: 0.001
+Best dropout rate test: 0.1
+Best number of epochs: 20
+Best test accuracy test: 0.3564356565475464
+30
+Best learning rate: 0.001
+Best dropout rate: 0.25
+Best number of epochs: 30
+Best validation accuracy combination: 0.4699999988079071
+test
+Best learning rate test: 0.001
+Best dropout rate test: 0.25
+Best number of epochs: 30
+Best test accuracy test: 0.48514851927757263
+40
+Best learning rate: 0.0001
+Best dropout rate: 0.15
+Best number of epochs: 40
+Best validation accuracy combination: 0.4000000059604645
+Best learning rate test: 0.0001
+Best dropout rate test: 0.15
+Best number of epochs: 40
+Best test accuracy test: 0.41584157943725586
