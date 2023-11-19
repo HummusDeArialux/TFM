@@ -30,11 +30,9 @@ For detailed information about the project, including methodologies, findings, a
 
 BCN20000, avaiable at: https://api.isic-archive.com/collections/249/
 
-Imagenes_256 can be obtain by resizing images to 256x256.
-
-Imagenes_256_reduced can be obtain by executing the code in reducing_dataset.py.
-
-Imagenes_test can be obtain by executing the code in create_test_images.py.
+- Imagenes_256 can be obtain by resizing images to 256x256.
+- Imagenes_256_reduced can be obtain by executing the code in reducing_dataset.py.
+- Imagenes_test can be obtain by executing the code in create_test_images.py.
 
 ## Models
 
