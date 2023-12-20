@@ -120,4 +120,4 @@ def specifications(request):
 
 
 def about_me(request):
-    return render(request, 'About_Me.html')
+    return render(request, 'AboutMe.html')

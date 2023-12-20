@@ -29,7 +29,7 @@ urlpatterns = [
     path('references/', references, name='References'),
     path('privacy/', privacy, name='Privacy'),
     path('specifications/', specifications, name='Specifications'),
-    path('about_me/', about_me, name='About me'),
+    path('about_me/', about_me, name='AboutMe'),
 ]
 
 if settings.DEBUG:
