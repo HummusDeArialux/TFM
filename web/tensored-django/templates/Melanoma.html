@@ -1,0 +1,197 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN Skin Condition Prediction Tool</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <script src="https://kit.fontawesome.com/aef800fe70.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Melanoma: <span>Information</span></h1>
+    </div>
+
+    <nav id="navbar">
+      <ul class="navbar-items flexbox-col">
+        <li class="navbar-logo flexbox-left">
+          <a class="navbar-item-inner flexbox">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <rect width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="6" width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="12" width="24" height="2" rx="1" fill="#ffffff"/>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'index' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'BCC' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">BCC Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Melanoma' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Melanoma Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Nevus' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Nevus Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'References' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="folder-open-outline"></ion-icon>
+            </div>
+            <span class="link-text">References</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Specifications' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="pie-chart-outline"></ion-icon>
+            </div>
+            <span class="link-text">Specifications</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Privacy' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <span class="link-text">Privacy</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'About me' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <span class="link-text">About me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+        <div>
+            <h2>Overview</h2>
+            <p>
+                Melanoma, a type of skin cancer originating in melanocytes, the pigment-producing cells, is
+                known for its potential to metastasize, making early detection crucial. This aggressive
+                cancer often presents as an irregularly shaped mole or dark lesion on the skin, with a
+                tendency to evolve in size, color, or texture.
+            </p>
+        </div>
+
+        <div>
+            <h2>Causes and Risk Factors</h2>
+            <ul class="with-bullets">
+                <li>Excessive sun exposure</li>
+                <li>Sunburns</li>
+                <li>Fair skin</li>
+                <li>Genetic predisposition</li>
+                <li>Numerous moles</li>
+                <li>Weakened immune function</li>
+            </ul>
+        </div>
+
+        <div>
+            <h2>Symptoms</h2>
+            <p>
+                Symptoms of melanoma include the development of new moles or changes in existing ones.
+                Pay attention to irregular borders, variations in color, diameter exceeding 6 millimeters,
+                and evolution over time.
+            </p>
+        </div>
+
+        <div>
+            <h2>Treatment</h2>
+            <p>
+                Treatment options for melanoma include surgical excision, lymph node biopsy, immunotherapy,
+                targeted therapy, and chemotherapy, depending on the stage and extent of the disease.
+                Early-stage melanomas are often curable with surgical removal.
+            </p>
+        </div>
+
+        <div>
+            <h2>Prevention</h2>
+            <p>
+                Preventing melanoma involves sun protection practices, including sunscreen use, protective
+                clothing, and avoiding tanning beds. Regular self-examinations and professional skin
+                checks aid in the early identification of suspicious lesions.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                This overview provides a glimpse into the pathology of Melanoma. For a comprehensive understanding of
+                your specific situation, consult with a healthcare professional.
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <img
+               src="{% static 'images/Melanoma2.png' %}"
+               width="1000"
+               height="auto">
+        </div>
+
+        <div>
+            <h2>How to tell moles and melanoma apart</h2>
+            <p>
+                When evaluating skin lesions, the ABCDE rule provides a framework for distinguishing between regular
+                nevi (moles) and potential melanomas. <b>Asymmetry</b>, where melanomas often exhibit irregular shapes
+                compared to the symmetrical nevi, serves as an initial consideration. <b>Border</b> irregularity is assessed
+                by examining whether the lesion has uneven or notched edges, with melanomas tending to have irregular
+                borders, while nevi typically maintain smooth contours. <b>Color</b> variation is another key factor;
+                melanomas may display multiple colors, whereas nevi usually present a uniform color. <b>Diameter</b>, with
+                melanomas often exceeding 6 millimeters in size, and <b>Evolution</b> or Change, involving alterations in
+                size, shape, or color over time, are additional aspects to observe. Regularly applying these criteria
+                during self-examinations can aid in the early detection of potential melanomas, prompting timely
+                medical evaluation for further assessment.
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <img
+               src="{% static 'images/Melanoma.png' %}"
+               width="600"
+               height="auto">
+        </div>
+
+        <div class="wrapper">
+            <a href="{% url 'index' %}"><button class="old-button">Back to main page</button></a>
+        </div>
+
+    </main>
+
+    <div class="bottom">
+      <h4>
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff8040;"></i>
+          <span> Disclaimer: </span> This AI-powered skin condition classifier is a tool for informational purposes only; it is not a substitute for professional medical advice.</h4>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

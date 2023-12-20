@@ -1,0 +1,161 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN Skin Condition Prediction Tool</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <script src="https://kit.fontawesome.com/aef800fe70.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Skin Condition Prediction Tool<span> with AI</span></h1>
+    </div>
+
+    <div>
+        <p>
+            Current possible classes: <b>Basal Cell Carcinoma</b>, <b>Melanoma</b> and <b>Nevus</b>.
+        </p>
+    </div>
+
+    <nav id="navbar">
+      <ul class="navbar-items flexbox-col">
+        <li class="navbar-logo flexbox-left">
+          <a class="navbar-item-inner flexbox">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <rect width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="6" width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="12" width="24" height="2" rx="1" fill="#ffffff"/>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'index' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'BCC' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">BCC Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Melanoma' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Melanoma Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Nevus' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Nevus Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'References' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="folder-open-outline"></ion-icon>
+            </div>
+            <span class="link-text">References</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Specifications' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="pie-chart-outline"></ion-icon>
+            </div>
+            <span class="link-text">Specifications</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Privacy' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <span class="link-text">Privacy</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'About me' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <span class="link-text">About me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <input
+        class="custom-file-upload"
+        type="file"
+        accept="image"
+        name="image"
+        id="file"
+      />
+      <button class="old-button" type="submit" id="submitBtn">
+        Predict Condition
+      </button>
+      <div class="status">
+        <p id="message">{{ message }}</p>
+      </div>
+    </form>
+
+    <div class="wrapper">
+      <img
+        src="{% if image_url %}{{ image_url }}{% else %}{% static 'images/placeholder.png' %}{% endif %}"
+        alt=""
+        width="400px"
+      />
+
+      <ul class="without-bullets">
+        <li><h2>Results:</h2></li>
+        <li>Prediction: <span class="type">{{ alteration }}</span></li>
+        <li>Probability: <span class="type">{{ result_probability }}</span></li>
+      </ul>
+    </div>
+
+    <div class="wrapper">
+      <img src="data:image/png;base64,{{ plot_image }}" alt="" />
+    </div>
+
+    <div class="wrapper">
+        {% if prediction == 0 %}
+            <a href="{% url 'BCC' %}"><button class="old-button">See more info</button></a>
+        {% elif prediction == 1 %}
+            <a href="{% url 'Melanoma' %}"><button class="old-button">See more info</button></a>
+        {% elif prediction == 2 %}
+            <a href="{% url 'Nevus' %}"><button class="old-button">See more info</button></a>
+        {% endif %}
+    </div>
+
+    <div>
+        <p>
+            To better understand the tool and how to use it, please visit the <a href={% url 'Specifications' %}>specifications</a> page by clicking the <b>left menu</b>.
+        </p>
+    </div>
+
+    <div class="bottom">
+      <h4>
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff8040;"></i>
+          <span> Disclaimer: </span> This AI-powered skin condition classifier is a tool for informational purposes only; it is not a substitute for professional medical advice.</h4>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

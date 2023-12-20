@@ -1,0 +1,185 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN Skin Condition Prediction Tool</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <script src="https://kit.fontawesome.com/aef800fe70.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Nevus: <span>Information</span></h1>
+    </div>
+
+    <nav id="navbar">
+      <ul class="navbar-items flexbox-col">
+        <li class="navbar-logo flexbox-left">
+          <a class="navbar-item-inner flexbox">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <rect width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="6" width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="12" width="24" height="2" rx="1" fill="#ffffff"/>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'index' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'BCC' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">BCC Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Melanoma' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Melanoma Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Nevus' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Nevus Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'References' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="folder-open-outline"></ion-icon>
+            </div>
+            <span class="link-text">References</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Specifications' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="pie-chart-outline"></ion-icon>
+            </div>
+            <span class="link-text">Specifications</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Privacy' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <span class="link-text">Privacy</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'About me' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <span class="link-text">About me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+        <div>
+            <h2>Overview</h2>
+            <p>
+                Nevi, commonly known as moles, are benign growths on the skin composed of pigment-producing cells
+                called melanocytes. These clusters of cells often appear as small, round, or oval spots with a
+                consistent color and regular borders. While most moles are harmless, changes in size, shape, or
+                color may warrant medical attention.
+            </p>
+        </div>
+
+        <div>
+            <h2>Causes and Characteristics</h2>
+            <p>
+                The development of nevi is influenced by a combination of genetic factors and sun exposure. They can
+                vary in color, ranging from tan to dark brown, and may be flat or raised. Nevi typically emerge in
+                childhood and adolescence, with the number stabilizing in adulthood.
+            </p>
+        </div>
+
+        <div>
+            <h2>Treatment</h2>
+            <p>
+                Generally, nevi do not require treatment unless there are signs of atypical features or changes
+                suggestive of malignancy. Removal may be considered for cosmetic reasons or if there is suspicion
+                of skin cancer.
+            </p>
+        </div>
+
+        <div>
+            <h2>Prevention and monitoring</h2>
+            <p>
+                Preventive measures against BCC involve diligent sun protection, including the use of sunscreen
+                and protective clothing. Regular self-examinations and professional skin checks contribute to
+                early detection and intervention.
+            </p>
+        </div>
+
+        <div>
+            <p>
+                This overview provides essential information about nevi. If you observe any unusual changes in your
+                moles or have concerns, seek guidance from a healthcare provider for a thorough evaluation.
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <img
+               src="{% static 'images/Nevus.png' %}"
+               width="1000"
+               height="auto">>
+        </div>
+
+        <div>
+            <h2>How to tell moles and melanoma apart</h2>
+            <p>
+                When evaluating skin lesions, the ABCDE rule provides a framework for distinguishing between regular
+                nevi (moles) and potential melanomas. <b>Asymmetry</b>, where melanomas often exhibit irregular shapes
+                compared to the symmetrical nevi, serves as an initial consideration. <b>Border</b> irregularity is assessed
+                by examining whether the lesion has uneven or notched edges, with melanomas tending to have irregular
+                borders, while nevi typically maintain smooth contours. <b>Color</b> variation is another key factor;
+                melanomas may display multiple colors, whereas nevi usually present a uniform color. <b>Diameter</b>, with
+                melanomas often exceeding 6 millimeters in size, and <b>Evolution</b> or Change, involving alterations in
+                size, shape, or color over time, are additional aspects to observe. Regularly applying these criteria
+                during self-examinations can aid in the early detection of potential melanomas, prompting timely
+                medical evaluation for further assessment.
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <img
+               src="{% static 'images/Melanoma.png' %}"
+               width="600"
+               height="auto">
+        </div>
+
+        <div class="wrapper">
+            <a href="{% url 'index' %}"><button class="old-button">Back to main page</button></a>
+        </div>
+
+    </main>
+
+    <div class="bottom">
+      <h4>
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff8040;"></i>
+          <span> Disclaimer: </span> This AI-powered skin condition classifier is a tool for informational purposes only; it is not a substitute for professional medical advice.</h4>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

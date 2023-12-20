@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN Skin Condition Prediction Tool</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <script src="https://kit.fontawesome.com/aef800fe70.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>About me</h1>
+    </div>
+
+    <nav id="navbar">
+      <ul class="navbar-items flexbox-col">
+        <li class="navbar-logo flexbox-left">
+          <a class="navbar-item-inner flexbox">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <rect width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="6" width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="12" width="24" height="2" rx="1" fill="#ffffff"/>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'index' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'BCC' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">BCC Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Melanoma' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Melanoma Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Nevus' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Nevus Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'References' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="folder-open-outline"></ion-icon>
+            </div>
+            <span class="link-text">References</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Specifications' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="pie-chart-outline"></ion-icon>
+            </div>
+            <span class="link-text">Specifications</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Privacy' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <span class="link-text">Privacy</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'About me' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <span class="link-text">About me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+        <div>
+            <p>
+                Hello, and welcome to Maria's corner of the web! I'm currently pursuing my master's
+                degree in Bioinformatics and Biostatistics, and this project represents the culmination of
+                my academic journey—a journey filled with exploration, learning, and passion for the fascinating
+                field of life sciences.
+            </p>
+        </div>
+
+        <div>
+
+        <div>
+            <h2>Academic background</h2>
+            <p>
+                I am a dedicated and enthusiastic bioinformatician with a keen interest in unraveling the
+                mysteries encoded within the vast biological data landscape. My academic pursuits have equipped
+                me with the knowledge and skills to tackle complex biological questions using cutting-edge
+                computational and statistical approaches.
+            </p>
+        </div>
+
+        <div>
+            <h2>The thesis project</h2>
+            <p>
+                This project stands as a testament to my academic endeavors, serving as the focal point of my
+                master's thesis. Through meticulous research, AI training, and innovative problem-solving,
+                I have endeavored to contribute to the ever-evolving landscape of bioinformatics.
+            </p>
+        </div>
+
+        <div>
+            <h2>Acknowledgments</h2>
+            <p>
+                I extend my heartfelt gratitude to my esteemed tutor, Romina Astrid Rebrij, whose guidance, expertise,
+                and encouragement have been invaluable throughout this journey. Their mentorship has not only
+                shaped this project but has also played a pivotal role in shaping my academic and professional growth.
+            </p>
+            <p>
+                I would also like to express my deepest appreciation to my family for their unwavering support and
+                understanding. Their encouragement and belief in my abilities have been the driving force behind my
+                academic pursuits. This achievement would not have been possible without their love and support.
+            </p>
+        </div>
+
+        <div>
+            <h2>Connect with me</h2>
+            <p>
+                I am passionate about fostering connections and collaborations within the scientific community.
+                If you share a similar interest or would like to connect, please feel free to reach out to
+                me at 'mlucasga@uoc.edu'.
+            </p>
+            <p>
+                Thank you for visiting and being a part of my academic journey!
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <a href="{% url 'index' %}"><button class="old-button">Back to main page</button></a>
+        </div>
+
+    </main>
+
+    <div class="bottom">
+      <h4>
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff8040;"></i>
+          <span> Disclaimer: </span> This AI-powered skin condition classifier is a tool for informational purposes only; it is not a substitute for professional medical advice.</h4>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

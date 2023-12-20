@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN Skin Condition Prediction Tool</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <script src="https://kit.fontawesome.com/aef800fe70.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Specifications</h1>
+    </div>
+
+    <nav id="navbar">
+      <ul class="navbar-items flexbox-col">
+        <li class="navbar-logo flexbox-left">
+          <a class="navbar-item-inner flexbox">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <rect width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="6" width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="12" width="24" height="2" rx="1" fill="#ffffff"/>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'index' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'BCC' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">BCC Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Melanoma' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Melanoma Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Nevus' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Nevus Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'References' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="folder-open-outline"></ion-icon>
+            </div>
+            <span class="link-text">References</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Specifications' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="pie-chart-outline"></ion-icon>
+            </div>
+            <span class="link-text">Specifications</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Privacy' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <span class="link-text">Privacy</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'About me' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <span class="link-text">About me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+        <div>
+            <h2>Website overview</h2>
+            <p>
+                Welcome to CNN Skin Condition Prediction Tool! Our website harnesses the power of cutting-edge Artificial
+                Intelligence (AI) to provide a seamless and efficient user experience. This page provides
+                an in-depth look into the technical aspects, features, and functionalities that drive the
+                performance of our platform.
+            </p>
+        </div>
+
+        <div>
+            <h2>How it works</h2>
+            <h3><span>Image Processing with Convolutional Neural Networks</span></h3>
+            <p>
+                Our website employs state-of-the-art Convolutional Neural Networks (CNNs) to process and analyze
+                images. CNNs are a class of deep learning models designed for image recognition and classification
+                tasks. They consist of multiple layers that automatically learn hierarchical features from the
+                input data.
+            </p>
+            <h3><span>AI Model Architecture</span></h3>
+            <p>
+                After rigorous testing of three different CNN architectures trained, we identified DenseNet121 as the
+                top-performing model. This model is implemented using transfer learning, taking advantage of
+                pre-trained weights on a large dataset. Additional fully connected layers are added to the end of
+                the network, which are fine-tuned using the BCN20000 dataset.
+            </p>
+            <h3><span>DenseNet121</span></h3>
+            <p>
+                DenseNet121 is a convolutional neural network architecture renowned for its efficiency and performance.
+                It leverages dense connections between layers, allowing for enhanced feature reuse and more efficient
+                learning. The transfer learning approach enables our model to benefit from knowledge gained during
+                the pre-training phase on a diverse dataset.
+            </p>
+        </div>
+
+        <div>
+            <h2>Features and functionalities</h2>
+            <h3><span>Real-time image processing</span></h3>
+            <p>
+                Our platform provides real-time image processing, enabling users to upload images and receive prompt
+                analyses. The AI model efficiently extracts relevant information and delivers accurate results.
+            </p>
+            <h3><span>User-friendly interface</span></h3>
+            <p>
+                The website features an intuitive and user-friendly interface, ensuring a seamless experience for
+                users with varying levels of technical expertise. The design prioritizes simplicity without
+                compromising on functionality.
+            </p>
+            <h3><span>Privacy-focused design</span></h3>
+            <p>
+                Your privacy is paramount to us. No user data, including uploaded images, is stored on our servers.
+                This design choice ensures a secure and confidential user experience.
+            </p>
+        </div>
+
+        <div>
+            <h2>Purpose of the project</h2>
+            <p>
+                Our goal is to democratize access to health information by providing a tool that is easily
+                accessible to anyone with an internet connection and a device capable of connecting to the internet.
+                While the tool serves as a valuable resource for preliminary analysis, it is essential to understand
+                its limitations.
+            </p>
+            <h3><span>Warnings and disclaimers</span></h3>
+            <ul class="with-bullets">
+                <li><b>Accuracy limitations: </b> In our test set, the accuracy of the model was approximately
+                    87%. As a result, there may be instances of misdiagnoses. This tool is not a substitute for
+                    appropriate medical consulting.</li>
+                <li><b>Probability disclaimer: </b> The probabilities displayed by the model are relative to its
+                    internal classification process. Even with a 100% probability, there is a possibility of
+                    misclassification. The probability values should be interpreted as indications rather than
+                    absolute certainties.</li>
+            </ul>
+        </div>
+
+        <div>
+            <p>
+                Feel free to explore the power of AI-driven image analysis with this webpage, but always prioritize
+                professional medical advice for accurate diagnoses.
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <a href="{% url 'index' %}"><button class="old-button">Back to main page</button></a>
+        </div>
+
+    </main>
+
+    <div class="bottom">
+      <h4>
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff8040;"></i>
+          <span> Disclaimer: </span> This AI-powered skin condition classifier is a tool for informational purposes only; it is not a substitute for professional medical advice.</h4>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>

@@ -1,0 +1,157 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CNN Skin Condition Prediction Tool</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <script src="https://kit.fontawesome.com/aef800fe70.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>Privacy policy</h1>
+    </div>
+
+    <nav id="navbar">
+      <ul class="navbar-items flexbox-col">
+        <li class="navbar-logo flexbox-left">
+          <a class="navbar-item-inner flexbox">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <rect width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="6" width="24" height="2" rx="1" fill="#ffffff"/>
+                <rect y="12" width="24" height="2" rx="1" fill="#ffffff"/>
+            </svg>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'index' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Home</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'BCC' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">BCC Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Melanoma' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Melanoma Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Nevus' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="home-outline"></ion-icon>
+            </div>
+            <span class="link-text">Nevus Info</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'References' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="folder-open-outline"></ion-icon>
+            </div>
+            <span class="link-text">References</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Specifications' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="pie-chart-outline"></ion-icon>
+            </div>
+            <span class="link-text">Specifications</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'Privacy' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="people-outline"></ion-icon>
+            </div>
+            <span class="link-text">Privacy</span>
+          </a>
+        </li>
+        <li class="navbar-item flexbox-left">
+          <a href="{% url 'About me' %}" class="navbar-item-inner flexbox-left">
+            <div class="navbar-item-inner-icon-wrapper flexbox">
+              <ion-icon name="settings-outline"></ion-icon>
+            </div>
+            <span class="link-text">About me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+        <div>
+            <p>Last Updated: December 19th, 2023</p>
+            <h2><span>Information we collect</span></h2>
+            <h3>Uploaded images</h3>
+            <p>
+                We want to assure you that this webpage does not store any uploaded images. The images you
+                upload are processed in real-time, and we do not retain copies of them on our servers.
+            </p>
+            <h3>User data</h3>
+            <p>
+                We do not collect any user data at any point during your interaction with the webpage.
+                Your privacy is important to us, and we make it a priority to ensure that your personal information
+                remains secure.
+            </p>
+        </div>
+
+        <div>
+            <h2><span>License</span></h2>
+            <p>This project is subject to an Attribution-NonCommercial-NoDerivs 3.0 Spain License by Creative Commons.
+                This means:</p>
+            <ul class="with-bullets">
+                <li><b>Attribution:</b> You must give appropriate credit, provide a link to the license, and indicate
+                    if changes were made.</li>
+                <li><b>NonCommercial:</b> You may not use the material for commercial purposes.</li>
+                <li><b>NoDerivs:</b> If you remix, transform, or build upon the material, you may not distribute the
+                    modified material.</li>
+            </ul>
+            <p>For the full text of the license, please visit the Creative Commons website.</p>
+        </div>
+
+        <div>
+            <h2><span>Security measures</span></h2>
+            <p>
+               We take the security of your data seriously. We implement industry-standard security measures to
+                protect your information from unauthorized access, disclosure, alteration, and destruction.
+            </p>
+        </div>
+
+        <div>
+            <h2><span>Changes to this privacy policy</span></h2>
+            <p>
+                We may update this Privacy Policy from time to time. We will notify you of any changes by posting
+                the new Privacy Policy on this page. Please review this Privacy Policy periodically for any changes.
+            </p>
+        </div>
+
+        <div class="wrapper">
+            <a href="{% url 'index' %}"><button class="old-button">Back to main page</button></a>
+        </div>
+
+    </main>
+
+    <div class="bottom">
+      <h4>
+          <i class="fa-solid fa-triangle-exclamation" style="color: #ff8040;"></i>
+          <span> Disclaimer: </span> This AI-powered skin condition classifier is a tool for informational purposes only; it is not a substitute for professional medical advice.</h4>
+    </div>
+
+    <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
