@@ -32,8 +32,7 @@ urlpatterns = [
     path('about_me/', about_me, name='AboutMe'),
 ]
 
-if settings.DEBUG:
-    # Serving media files during development
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-    # Serving static files during development
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+# Serving media files during development
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+# Serving static files during development
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
