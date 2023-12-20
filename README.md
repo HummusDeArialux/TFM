@@ -23,6 +23,18 @@ This repository contains the code for my Master's Thesis (TFM) focused on machin
 
 ADD WEB LINK WHEN COMPLETED
 
+## Deployment
+
+To deploy via Docker, clone this repository and execute the following command on the server terminal:
+
+```
+git clone git@github.com:HummusDeArialux/TFM.git
+sudo docker build -t skinai .
+sudo docker run -p 8000:8000 skinai
+```
+
+After deploying, navigate to http://127.0.0.1:8000
+
 ## Documentation
 
 For detailed information about the project, including methodologies, findings, and the web app architecture, please refer to the `/docs` directory.
