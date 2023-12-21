@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
+# If using a reverse proxy, ensure that it sets X-Forwarded-Proto header
+USE_X_FORWARDED_PROTO = True
 
 # Application definition
 
