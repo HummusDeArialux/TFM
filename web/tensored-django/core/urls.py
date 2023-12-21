@@ -17,7 +17,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path
-from .views import index, bcc, melanoma, nevus, references, privacy, specifications, about_me, download_examples
+from .views import index, bcc, melanoma, nevus, references, privacy, specifications, about_me
 
 
 urlpatterns = [
@@ -30,7 +30,6 @@ urlpatterns = [
     path('privacy/', privacy, name='Privacy'),
     path('specifications/', specifications, name='Specifications'),
     path('about_me/', about_me, name='AboutMe'),
-    path('download_examples/', download_examples, name='DownloadExamples'),
 ]
 
 # Serving media files during development
