@@ -129,7 +129,7 @@ def about_me(request):
 
 def download_examples(request):
     # Path to your static assets folder
-    assets_path = static()
+    assets_path = static('')
 
     # Path to the zipped example images file
     zip_path = os.path.join(assets_path, 'example_images.zip')
