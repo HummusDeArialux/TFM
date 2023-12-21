@@ -4,10 +4,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 import base64
 import io
+import os
 
 from django.template.response import TemplateResponse
 from django.utils.datastructures import MultiValueDictKeyError
 from django.shortcuts import render
+from django.http import HttpResponse
+from django.contrib.staticfiles import finders
+
 from .predictor import predict_image
 
 from django.core.files.storage import FileSystemStorage
@@ -121,3 +125,19 @@ def specifications(request):
 
 def about_me(request):
     return render(request, 'AboutMe.html')
+
+
+def download_examples(request):
+    # Path to your assets folder
+    assets_path = finders.find('assets')
+
+    # Path to the zipped example images file
+    zip_path = os.path.join(assets_path, 'example_images.zip')
+
+    # Read the zip file and serve it as a response
+    with open(zip_path, 'rb') as zip_file:
+        response = HttpResponse(zip_file.read(), content_type='application/zip')
+        response['Content-Disposition'] = 'attachment; filename=example_images.zip'
+
+    return response
+
