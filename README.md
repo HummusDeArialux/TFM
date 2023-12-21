@@ -21,7 +21,7 @@ This repository contains the code for my Master's Thesis (TFM) focused on machin
 
 ## Web App Demo
 
-ADD WEB LINK WHEN COMPLETED
+[WebTool](https://skinai.bioedu.one/)
 
 ## Deployment
 
