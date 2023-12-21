@@ -27,8 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-# If using a reverse proxy, ensure that it sets X-Forwarded-Proto header
-USE_X_FORWARDED_PROTO = True
+# If using a reverse proxy, change Origin header to https
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Application definition
 
