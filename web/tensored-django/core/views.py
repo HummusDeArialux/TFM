@@ -23,6 +23,7 @@ class CustomFileSystemStorage(FileSystemStorage):
         return name
 
 
+# Def index function
 def index(request):
     message = ""
     prediction = ""
@@ -99,30 +100,37 @@ def index(request):
         )
 
 
+# Def bcc function
 def bcc(request):
     return render(request, 'BCC.html')
 
 
+# Def melanoma function
 def melanoma(request):
     return render(request, 'Melanoma.html')
 
 
+# Def nevus function
 def nevus(request):
     return render(request, 'Nevus.html')
 
 
+# Def references function
 def references(request):
     return render(request, 'References.html')
 
 
+# Def privacy function
 def privacy(request):
     return render(request, 'Privacy.html')
 
 
+# Def specifications function
 def specifications(request):
     return render(request, 'Specifications.html')
 
 
+# Def about_me function
 def about_me(request):
     return render(request, 'AboutMe.html')
 
