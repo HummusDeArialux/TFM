@@ -2,19 +2,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta tags for character set, compatibility, and viewport -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
     <title>CNN Skin Condition Prediction Tool</title>
+    <!-- Link to the main stylesheet -->
     <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <!-- External script for FontAwesome icons -->
     <script src="https://kit.fontawesome.com/aef800fe70.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
+    <!-- Header section -->
     <div class="header">
       <h1>Nevus: <span>Information</span></h1>
     </div>
 
+    <!-- Navigation bar -->
     <nav id="navbar">
       <ul class="navbar-items flexbox-col">
         <li class="navbar-logo flexbox-left">
@@ -26,6 +32,7 @@
             </svg>
           </a>
         </li>
+        <!-- Home -->
         <li class="navbar-item flexbox-left">
           <a href="{% url 'index' %}" class="navbar-item-inner flexbox-left">
             <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -34,6 +41,7 @@
             <span class="link-text">Home</span>
           </a>
         </li>
+        <!-- BCC Info -->
         <li class="navbar-item flexbox-left">
           <a href="{% url 'BCC' %}" class="navbar-item-inner flexbox-left">
             <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -42,6 +50,7 @@
             <span class="link-text">BCC Info</span>
           </a>
         </li>
+        <!-- Melanoma Info -->
         <li class="navbar-item flexbox-left">
           <a href="{% url 'Melanoma' %}" class="navbar-item-inner flexbox-left">
             <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -50,6 +59,7 @@
             <span class="link-text">Melanoma Info</span>
           </a>
         </li>
+        <!-- Nevus Info -->
         <li class="navbar-item flexbox-left">
           <a href="{% url 'Nevus' %}" class="navbar-item-inner flexbox-left">
             <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -58,6 +68,7 @@
             <span class="link-text">Nevus Info</span>
           </a>
         </li>
+        <!-- References -->
         <li class="navbar-item flexbox-left">
           <a href="{% url 'References' %}" class="navbar-item-inner flexbox-left">
             <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -66,6 +77,7 @@
             <span class="link-text">References</span>
           </a>
         </li>
+        <!-- Specifications -->
         <li class="navbar-item flexbox-left">
           <a href="{% url 'Specifications' %}" class="navbar-item-inner flexbox-left">
             <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -74,6 +86,7 @@
             <span class="link-text">Specifications</span>
           </a>
         </li>
+        <!-- Privacy -->
         <li class="navbar-item flexbox-left">
           <a href="{% url 'Privacy' %}" class="navbar-item-inner flexbox-left">
             <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -82,6 +95,7 @@
             <span class="link-text">Privacy</span>
           </a>
         </li>
+        <!-- About me -->
         <li class="navbar-item flexbox-left">
           <a href="{% url 'AboutMe' %}" class="navbar-item-inner flexbox-left">
             <div class="navbar-item-inner-icon-wrapper flexbox">
@@ -93,6 +107,7 @@
       </ul>
     </nav>
 
+    <!-- Main content -->
     <main>
         <div>
             <h2>Overview</h2>
@@ -138,6 +153,7 @@
             </p>
         </div>
 
+        <!-- Nevus Image -->
         <div class="wrapper">
             <img
                src="{% static 'images/Nevus.png' %}"
@@ -161,6 +177,7 @@
             </p>
         </div>
 
+        <!-- Melanoma vs Nevus Image -->
         <div class="wrapper">
             <img
                src="{% static 'images/Melanoma.png' %}"
@@ -168,18 +185,21 @@
                height="auto">
         </div>
 
+        <!-- Back to main page button -->
         <div class="wrapper">
             <a href="{% url 'index' %}"><button class="old-button">Back to main page</button></a>
         </div>
 
     </main>
 
+    <!-- Bottom disclaimer section -->
     <div class="bottom">
       <h4>
           <i class="fa-solid fa-triangle-exclamation" style="color: #ff8040;"></i>
           <span> Disclaimer: </span> This AI-powered skin condition classifier is a tool for informational purposes only; it is not a substitute for professional medical advice.</h4>
     </div>
 
+    <!-- Script tag for the main JavaScript file -->
     <script src="{% static 'js/main.js' %}"></script>
   </body>
 </html>
